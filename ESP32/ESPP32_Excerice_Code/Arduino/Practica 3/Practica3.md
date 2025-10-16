@@ -42,10 +42,20 @@ En la mayoría de las placas ESP32 el LED está conectado al **pin GPIO2** o **G
 (Se recomienda confirmar revisando el esquemático o probando directamente).
 
 ### ESP32 Wi-Fi Modos de operación
+ESP32-STA-Mode.svg
+
+<p align="center">
+  <img src="ESP32-STA-Mode.svg" width="40%"><br>
+  <em>Figura 1: ESP32 en modo STA </em>
+</p>
+
+|  **Modo**  | **Descripción**   | **Casos de uso**     |
+|------------| ----------------- | ---------------------|
+|Station Mode (STA) |Connects to a Wi-Fi network (like a router) and gets an IP address|IoT	Cloud	Communication, Web Server, Data Loggin| 
+|Access Point Mode (AP) | Creates its own Wi-Fi network and allows other devices to connect.|Local	Communication,	IoT Mesh Network, Hotspot|
+|Dual Mode (AP + STA) |Works as both an Access Point and a Station simultaneously.|IoT Gateway, Wi-Fi Extender, Smart Home Hub|
 
 
-
-![alt text](ESP32-STA-Mode.svg)
 
 ### 1.3 Procedimiento para probar
 
