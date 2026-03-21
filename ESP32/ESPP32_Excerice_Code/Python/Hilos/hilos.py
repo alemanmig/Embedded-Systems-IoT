@@ -321,17 +321,49 @@ def sumar(a,b):
 #for i in range(15):
 #    print(futuro.result())
 
+#def suma(a,b):
+#    time.sleep(1)
+#    return a+b
+
+#def fin(futuro):
+#    print("finalizo la ejecución")
+#    print(futuro.result())
+
+#executor = ThreadPoolExecutor(max_workers=2)
+#futuro = executor.submit(suma, 15,37)
+#futuro.add_done_callback(fin)
+
+#for i in range(15):
+#    time.sleep(0.2)
+#    print(i)
+
+
 def suma(a,b):
-    time.sleep(1)
+    time.sleep(5)
     return a+b
 
-def fin(futuro):
-    print("finalizo la ejecución")
+def fin1(futuro):
+    print("finalizó la suma 1")
+    print(futuro.result())
+    
+def fin2(futuro):
+    print("finalizó la suma 2")
+    print(futuro.result())
+
+def fin3(futuro):
+    print("finalizó la suma 3")
+    print(futuro.result())
+
+def fin4(futuro):
+    print("finalizó la suma 4")
     print(futuro.result())
 
 executor = ThreadPoolExecutor(max_workers=2)
 futuro = executor.submit(suma, 15,37)
-futuro.add_done_callback(fin)
+futuro.add_done_callback(fin1)
+futuro.add_done_callback(fin2)
+futuro.add_done_callback(fin3)
+futuro.add_done_callback(fin4)
 
 for i in range(15):
     time.sleep(0.2)
