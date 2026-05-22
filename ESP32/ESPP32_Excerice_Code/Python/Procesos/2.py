@@ -8,7 +8,7 @@ def suma(a,b):
 # Paso 1
 # (Utilizando una tupla)
 
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #    proceso1 = multiprocessing.Process(target=suma, args=(10,25))
 #    proceso2 = multiprocessing.Process(target=suma, args=(5,5))
 #    proceso3 = multiprocessing.Process(target=suma, args=(2,3))
