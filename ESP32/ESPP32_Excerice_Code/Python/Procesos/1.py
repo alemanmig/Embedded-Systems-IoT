@@ -21,14 +21,14 @@ import time
 def algo():
     print("Inicial proceso")
     time.sleep(5)
-    print("Finbaliza proceso")
+    print("Finaliza proceso")
 
 # necesitamos utilizar un bloque que nos permita condicionar la seccion del codigo
 # que se encargará de crear los procesos
 
-proceso = multiprocessing.Process(target=algo)
-proceso.start()
-print("Finalizar proceso padre")
+# proceso = multiprocessing.Process(target=algo)
+# proceso.start()
+# print("Finalizar proceso padre")
 
 # This probably means that you are not using fork to start your
 #       child processes and you have forgotten to use the proper idiom
@@ -40,9 +40,9 @@ print("Finalizar proceso padre")
 # Paso 2
 # Comentar lineas 29, 30 y 31 y descomentar 43 a 46 
 
-#if __name__ == '__main__':         # Como solo tenemos un proceso lo podemos correr desde aqui
-#    proceso = multiprocessing.Process(target=algo)
-#    proceso.start()
-#    print("Finalizar proceso padre")
+if __name__ == '__main__':         # Como solo tenemos un proceso lo podemos correr desde aqui
+   proceso = multiprocessing.Process(target=algo)
+   proceso.start()
+   print("Finalizar proceso padre")
 
 # Ceeamos un proceso usando multiprocessing
