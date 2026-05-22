@@ -15,16 +15,19 @@ def evaluacion(lista, queue):
 if __name__ == "__main__":
     queue1 = multiprocessing.Queue()
     queue2 = multiprocessing.Queue()
-    lista1 = ["Azul", "Rojo", "Azul", "Azul"] # simula la lectura de los sensores
+    lista1 = ["Azul", "Azul", "Azul", "Azul"] # simula la lectura de los sensores
     lista2 = ["Azul", "Azul", "Azul", "Azul"] 
-    proceso1 = multiprocessing.Process(target=evaluacion, kwargs={"lista":lista1, "queue:":queue1,}, daemon=True)
-    proceso2 = multiprocessing.Process(target=evaluacion, kwargs={"lista":lista1, "queue:":queue1,}, daemon=True)
+    proceso1 = multiprocessing.Process(target=evaluacion, kwargs={"lista":lista1, "queue":queue1,}, daemon=True)
+    proceso2 = multiprocessing.Process(target=evaluacion, kwargs={"lista":lista2, "queue":queue2,}, daemon=True)
     proceso1.start()
     proceso2.start()
 
+    proceso1.join()
+    proceso2.join()
+
     time.sleep(2)
-    res1 = queue1.get_nowait()
-    res2 = queue2.get_nowait()
+    res1 = queue1.get() #_nowait()
+    res2 = queue2.get() # _nowait()
 
     print(res1)
 
