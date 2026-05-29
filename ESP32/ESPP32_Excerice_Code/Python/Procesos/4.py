@@ -6,15 +6,15 @@
 import multiprocessing
 import time
 
-#def conteo(cantidad,queue):
+# def conteo(cantidad,queue):
 #    for i in range(cantidad):
 #        time.sleep(0.5)
 #        print(i)
 #        queue.put(i)
 
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #    queue = multiprocessing.Queue()
-#    proceso = multiprocessing.Process(target=conteo, kwargs={"cantidad":20, "queue":queue}, daemon=True)
+#    proceso = multiprocessing.Process(target=conteo, kwargs={"cantidad":20, "queue":queue}, daemon=False)
 #    proceso.start()
 #    time.sleep(5)
 #    print("Finaliza proceso padre")
@@ -24,17 +24,17 @@ import time
 # Paso 2
 # comentar de la 9 a la 22
 
-#def conteo(cantidad,queue):
-#    for i in range(cantidad):
-#        time.sleep(0.5)
-#        print(i)
-#        queue.put("hola"+str(i))
+def conteo(cantidad,queue):
+   for i in range(cantidad):
+       time.sleep(0.5)
+       print(i)
+       queue.put("hola"+str(i))
 
-#if __name__ == "__main__":
-#    queue = multiprocessing.Queue()
-#    proceso = multiprocessing.Process(target=conteo, kwargs={"cantidad":20, "queue":queue}, daemon=True)
-#    proceso.start()
-#    time.sleep(5)
-#    print("Finaliza proceso padre")
-#    while not queue.empty():
-#        print(queue.get())
+if __name__ == "__main__":
+   queue = multiprocessing.Queue()
+   proceso = multiprocessing.Process(target=conteo, kwargs={"cantidad":20, "queue":queue}, daemon=True)
+   proceso.start()
+   time.sleep(5)
+   print("Finaliza proceso padre")
+   while not queue.empty():
+       print(queue.get())
