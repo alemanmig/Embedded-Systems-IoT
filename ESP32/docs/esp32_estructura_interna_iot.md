@@ -20,9 +20,9 @@ En términos educativos, el ESP32 es una plataforma muy adecuada para estudiante
 
 ## 2. Imagen general de la estructura interna
 
-La siguiente imagen resume los principales bloques funcionales del ESP32.
+La siguiente imagen resume los principales bloques funcionales del ESP32.ß
 
-![Estructura interna del ESP32](internal_architecture_of_the_esp32_chip.png)
+![Estructura interna del ESP32](esp32_estructura_interna.png)
 
 El diagrama muestra que el ESP32 puede entenderse como una plataforma embebida integrada por varios subsistemas conectados alrededor de un bloque central de procesamiento.
 
