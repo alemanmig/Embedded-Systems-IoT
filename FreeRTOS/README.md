@@ -354,7 +354,3 @@ Ahora cada LED tiene **su propio periodo, independiente**, sin una sola línea d
 
 ---
 
-## 9. Siguientes pasos
-
-- **`vTaskDelay` vs `vTaskDelayUntil`:** la segunda da periodos exactos sin acumular *drift*, lo que importa en muestreo de sensores.
-- **Prioridades y preempción:** subir una tarea a prioridad 2 sin `vTaskDelay` para *ver* el *starvation* en los LEDs. Es un experimento muy didáctico.
