@@ -13,9 +13,9 @@ TaskProfiler BlueLEDProfiler;
 TaskHandle_t blue_Handle, red_Handle, yellow_Handle;  // nueva variable Task Handle
 
 void setup() {
-  xTaskCreate(redLedControllerTask,"RED LED Task",100,NULL,1,&red_Handle);
-  xTaskCreate(blueLedControllerTask,"BLUE LED Task",100,NULL,1,&blue_Handle);
-  xTaskCreate(yellowLedControllerTask,"YELLOW LED Task",100,NULL,1,&yellow_Handle);
+  xTaskCreate(redLedControllerTask,"RED LED Task",128,NULL,1,&red_Handle);
+  xTaskCreate(blueLedControllerTask,"BLUE LED Task",128,NULL,1,&blue_Handle);
+  xTaskCreate(yellowLedControllerTask,"YELLOW LED Task",128,NULL,1,&yellow_Handle);
 
 }
 
@@ -25,8 +25,7 @@ void redLedControllerTask(void *pvParametres)
   while(1)
   {
    digitalWrite(RED,digitalRead(RED)^1);
-   vTaskDelay(pdMS_TO_TICKS(100));
-   //delay(50);
+   delay(50);
   }
 }
 
@@ -36,8 +35,7 @@ void blueLedControllerTask(void *pvParameters)
   while(1)
   {
    digitalWrite(BLUE,digitalRead(BLUE)^1);
-   vTaskDelay(pdMS_TO_TICKS(100));
-   //delay(50);
+   delay(50);
   }
 }
 
@@ -47,9 +45,7 @@ void yellowLedControllerTask(void *pvParameters)
   while(1)
   {
    digitalWrite(YELLOW,digitalRead(YELLOW)^1);
-   vTaskPrioritySet(yellow_Handle,2);
-   vTaskDelay(pdMS_TO_TICKS(100));
-   //delay(50);
+   delay(50);
   }
 }
 
